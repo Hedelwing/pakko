@@ -1,0 +1,32 @@
+@import 'variables';
+
+.footer {
+    margin-top: 12rem;
+    background-color: #f8f8f9;
+    color: $secondary-text;
+    padding: 55px 0 57px;
+    &__section-header {
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin: 0;
+    }
+    &__list {
+        margin: 1.2rem 0 0 0;
+        font-size: 1.5rem;
+        &-item:not(:first-child) {
+            margin-top: 0.6rem;
+        }
+    }
+    &__text {
+        margin: 1.8rem 0 0;
+        letter-spacing: 0.018rem;
+        line-height: 3rem;
+    }
+    &__social {
+        margin-top: 2.8rem;
+        display: inline-flex;
+        &-item:not(:last-child) {
+            margin-right: 2.4rem;
+        }
+    }
+}

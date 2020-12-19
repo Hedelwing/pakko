@@ -1,0 +1,8 @@
+@function media-min($size) {
+    @return "min-width: #{map-get($breakpoints, $size)}";
+}
+
+@mixin alignCenter {
+    display: flex;
+    align-items: center;
+}

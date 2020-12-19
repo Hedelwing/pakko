@@ -1,0 +1,65 @@
+@import 'variables';
+
+.reviews {
+    margin-top: 19.6rem;
+    &__title {
+        font-weight: 700;
+        font-size: 4.8rem;
+        line-height: 5.6rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        margin: 0;
+        color: $dark;
+    }
+}
+
+$colors: (
+    "lavender": $lavender, 
+    "green": map-get($green, "light"), 
+    "pink": $pink, 
+    "blue": $blue, 
+    "amber": map-get($amber, "light"),
+);
+
+.review {
+    padding: 4rem;
+    border-radius: 8px;
+    @each $name, $color in $colors {
+        &_#{$name} {
+            background-color: $color 
+        }
+    }
+    &__social {
+        margin-left: auto;
+    }
+    &__user {
+        &-info {
+            margin-left: 1.6rem;
+        }
+        &-title {
+            font-weight: bold;
+            margin: 0;
+            font-size: 1.6rem;
+            color: $dark;
+        }
+        &-subtitle {
+            font-size: 1.5rem;
+            margin: 0;
+            color: $secondary-text;
+        }
+    }
+    &__header {
+        display: flex;
+    }
+    &__content {
+        color: $secondary-text;
+        margin-top: 3.6rem;
+        font-size: 1.7rem;
+        line-height: 3rem;
+        letter-spacing: 0.018rem;
+    }
+    &__footer {
+        margin-top: 2rem;
+        font-weight: 700;
+    }
+}

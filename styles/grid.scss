@@ -1,0 +1,47 @@
+@import "variables";
+@import "utils";
+
+$grid-spacings: (
+    "small": 2.4rem,
+    "medium": 4rem,
+);
+
+$sizes: ("xs", "sm");
+$column-sizes: (3, 4, 6, 12);
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    &__item {
+        box-sizing: border-box;
+        @each $column-size in $column-sizes {
+            &_#{$column-size} {
+                flex-grow: 0;
+                flex-basis: calc(100% / (12 / #{$column-size}));
+            }
+        }
+        @each $size in $sizes {
+            @each $column-size in $column-sizes {
+                &_up-#{$size}-#{$column-size} {
+                    @media (media-min($size)) {
+                        flex-grow: 0;
+                        flex-basis: calc(100% / (12 / #{$column-size}));
+                    }
+                }
+            }
+        }
+    }
+    @each $size, $space in $grid-spacings {
+        &_#{$size}-spacing {
+            width: calc(100% + #{$space});
+            margin: -$space/2;
+        }
+        &_#{$size}-spacing > &__item {
+            padding: $space/2;
+        }
+    }
+    &_start {
+        align-items: flex-start;
+    }
+}
